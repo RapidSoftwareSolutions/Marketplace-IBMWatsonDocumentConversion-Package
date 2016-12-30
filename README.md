@@ -11,13 +11,13 @@ The IBM Watson™ Document conversion service converts a single HTML, PDF, or Mi
 
 # Configuration
 `normalizedHtml`, `headingFonts`, `headingStyles` fields format
-
+"Specifies the values to identify the main content that is not converted. If this value is set, anything that matches one of the xpaths is excluded from the output
 #### `normalizedHtml` format:
 | Field                      | Type       | Description
 |----------------------------|------------|----------
 | exclude_tags_completely    | String     | Defines tags that should be removed completely with their content. Valid values are a list of tags.
 | exclude_tags_keep_content  | String     | Defines tags that should be removed, but content is kept. Valid values are a list of tags.
-| keep_content.xpaths        | String     | Specifies a list of xpaths that identify content that is converted. If this value is set, anything that matches one of the xpaths are included in the output. The inclusions specified by this parameter are processed after any processing specified by `exclude_content_xpaths`.
+| keep_content.xpaths        | String     | Specifies the values to identify the main content that is not converted. If this value is set, anything that matches one of the xpaths is excluded from the output
 | exclude_content.xpaths     | String     | Specifies a list of xpaths that identify content that is converted. If this value is set, anything that matches one of the xpaths are included in the output. The inclusions specified by this parameter are processed after any processing specified by `exclude_content_xpaths`.
 | keep_tag_attributes        | String     | List of attributes to keep in the HTML tags. Can only be specified if exclude_tag_attributes is not specified. Valid values are EVENT_ACTIONS, *, or an array of individual attributes. Selecting EVENT_ACTIONS includes all of the JavaScript action attributes. Selecting * includes all attributes. For best results, include rowspan, colspan, and border.
 | exclude_tag_attributes     | String     | List of attributes to strip from the HTML tags. Can only be specified if keep_tag_attributes is not specified. Valid values are EVENT_ACTIONS, *, or an array of individual attributes. Selecting EVENT_ACTIONS excludes all of the JavaScript action attributes. Selecting * excludes all attributes. For best results, do not exclude rowspan, colspan, or border.
