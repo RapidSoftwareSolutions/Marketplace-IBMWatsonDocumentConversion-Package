@@ -7,7 +7,7 @@ module.exports.do = function(req, res){
         'image': 'https://avatars0.githubusercontent.com/u/9221727?v=3&s=200',
         'repo': 'https://github.com/RapidSoftwareSolutions/Marketplace-IBMWatsonDocumentConversion-Package',
         'accounts': {
-            "domain": "https://www.ibm.com/watson?ref=rapidapi",
+            "domain": "https://www.ibm.com/watson",
             "credentials": ["username", "password"]
         },
         'blocks': [{
@@ -369,12 +369,6 @@ module.exports.do = function(req, res){
                     required: true
                 },
                 {
-                    name: "version",
-                    type: "String",
-                    info: "The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.",
-                    required: false
-                },
-                {
                     name: "file",
                     type: "File",
                     info: "The file to index. Required if the metadata object is not included. Maximum file size is 50 MB. The API detects the MIME type, but you can specify it if incorrect. Acceptable MIME type values are text/html, text/xhtml+xml, application/pdf, application/msword, and application/vnd.openxmlformats-officedocument.wordprocessingml.document.",
@@ -450,12 +444,6 @@ module.exports.do = function(req, res){
                     name: "password",
                     type: "credentials",
                     info: "Password obtained from IBM Bluemix.",
-                    required: true
-                },
-                {
-                    name: "metadata",
-                    type: "File",
-                    info: "File or JSON Object. A metadata part that describes the external metadata of the file. Required if the file is not included. You might call this method without a file part when there is no document content to index (for example, with a database connector). Maximum size of the part is 1 MB.",
                     required: true
                 },
                 {
