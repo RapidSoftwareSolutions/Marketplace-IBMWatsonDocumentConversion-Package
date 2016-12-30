@@ -490,7 +490,7 @@ module.exports.do = function(req, res){
                 }
             ], 
             'callbacks':[{'name':'error','info':'Error'}, {'name':'success','info':'Success'}]
-        }{
+        }, {
             "name":"indexExternalMetadata",
             "description": "Prepares a metadata object for the Retrieve and Rank service as part of an Enhanced Information Retrieval solution, then adds the content to your Solr index so you can search it.",
             "args":[
