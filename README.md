@@ -333,14 +333,14 @@ Converts a `Microsoft Word™` document to normalized HTML.
 ``` 
 
 ## IBMWatsonDocumentConversion.indexHtmlDocument
-Prepares a `html` document for the Retrieve and Rank service as part of an Enhanced Information Retrieval solution, then adds the content to your Solr index so you can search it.
+Prepares a document for the Retrieve and Rank service as part of an Enhanced Information Retrieval solution, then adds the content to your Solr index so you can search it.
 
 | Field                           | Type       | Description
 |---------------------------------|------------|----------
 | username                        | credentials| Username obtained from IBM Bluemix.
 | password                        | credentials| Password obtained from IBM Bluemix.
 | version                         | String     | The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.
-| file                            | File       | The `html` file to convert. Maximum file size is 50 MB.
+| file                            | File       | The file to index. Required if the metadata object is not included. Maximum file size is 50 MB. The API detects the MIME type, but you can specify it if incorrect. Acceptable MIME type values are text/html, text/xhtml+xml, application/pdf, application/msword, and application/vnd.openxmlformats-officedocument.wordprocessingml.document.
 | metadata                        | JSON       | A metadata part that describes the external metadata of the file. Required if the file is not included. You might call this method without a file part when there is no document content to index (for example, with a database connector). Maximum size of the part is 1 MB.
 | normalizedHtml                  | JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
 | retrieveAndRankDryRun           | Boolean    | The dryRun property defaults to false. Set it to true to test how your document is indexed. When set to true, service_instance_id, cluster_id, and search_collection are optional.
@@ -350,137 +350,6 @@ Prepares a `html` document for the Retrieve and Rank service as part of an Enhan
 | retrieveAndRankFieldsMappings   | JSON       | An array of objects to specify how to connect metadata fields in the file to fields in SOLR. Use the syntax "mappings"{"from":"field_in_doc","to":"field_in_SOLR"}].
 | retrieveAndRankFieldsInclude    | JSON       | An array of fields in the file to include from Retrieve and Rank. To specify the allowed fields, provide only the include object. When you provide an include object, fields that are not included are excluded. Use the syntax "include":["field3_in_SOLR"].
 | retrieveAndRankFieldsExclude    | JSON       | An array of fields to exclude from Retrieve and Rank. To exclude a few fields and allow all others, provide only the exclude object. Fields that are not excluded are allowed. Follows the syntax "exclude":["field1_in_SOLR","field2_in_SOLR"].
-
-#### `metadata` filed example
-```json
-"metadata": {
-	"custom_key": "customValue"
-}
-```
-
-#### `normalizedHtml` field example: 
-```json
-"normalizedHtml": {
-	"exclude_tags_completely":["script", "sup"],
-}
-```
-
-#### `retrieveAndRankFieldsMappings` field example: 
-```json
-"retrieveAndRankFieldsMappings": [
-	{"from":"field_in_doc","to":"field_in_SOLR"}
-]
-```
-
-#### `retrieveAndRankFieldsInclude` field example: 
-```json
-"retrieveAndRankFieldsInclude": ["field3_in_SOLR"]
-```
-
-#### `retrieveAndRankFieldsExclude` field example: 
-```json
-"retrieveAndRankFieldsExclude": ["field1_in_SOLR","field2_in_SOLR"]
-```
-
-## IBMWatsonDocumentConversion.indexPDFDocument
-Prepares a `pdf` document for the Retrieve and Rank service as part of an Enhanced Information Retrieval solution, then adds the content to your Solr index so you can search it.
-
-| Field                           | Type       | Description
-|---------------------------------|------------|----------
-| username                        | credentials| Username obtained from IBM Bluemix.
-| password                        | credentials| Password obtained from IBM Bluemix.
-| version                         | String     | The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.
-| file                            | File       | The `pdf` file to convert. Maximum file size is 50 MB.
-| metadata                        | JSON       | A metadata part that describes the external metadata of the file. Required if the file is not included. You might call this method without a file part when there is no document content to index (for example, with a database connector). Maximum size of the part is 1 MB.
-| normalizedHtml                  | JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
-| retrieveAndRankDryRun           | Boolean    | The dryRun property defaults to false. Set it to true to test how your document is indexed. When set to true, service_instance_id, cluster_id, and search_collection are optional.
-| retrieveAndRankServiceInstanceId| String     | The identifier or your Retrieve and Rank service. Required if dry_run is not set to false. To find your service_instance_id, click the tile for your service in Bluemix, and then look at the URL in the browser for the serviceGuid= request parameter. The value for service_instance_id is the value for serviceGuid.
-| retrieveAndRankClusterId        | String     | Matches the value of solr_cluster_id in your Retrieve and Rank service. Required if dry_run is not set to false.
-| retrieveAndRankSearchCollection | String     | Matches the value of collection_name in your Retrieve and Rank service. Required if dry_run is not set to false.
-| retrieveAndRankFieldsMappings   | JSON       | An array of objects to specify how to connect metadata fields in the file to fields in SOLR. Use the syntax mappings"{"from":"field_in_doc","to":"field_in_SOLR"}].
-| retrieveAndRankFieldsInclude    | JSON       | An array of fields in the file to include from Retrieve and Rank. To specify the allowed fields, provide only the include object. When you provide an include object, fields that are not included are excluded. Use the syntax "include":["field3_in_SOLR"].
-| retrieveAndRankFieldsExclude    | JSON       | An array of fields to exclude from Retrieve and Rank. To exclude a few fields and allow all others, provide only the exclude object. Fields that are not excluded are allowed. Follows the syntax "exclude":["field1_in_SOLR","field2_in_SOLR"].
-
-#### `metadata` filed example
-```json
-"metadata": {
-	"custom_key": "customValue"
-}
-```
-
-#### `normalizedHtml` field example: 
-```json
-"normalizedHtml": {
-	"exclude_tags_completely":["script", "sup"],
-}
-```
-
-#### `retrieveAndRankFieldsMappings` field example: 
-```json
-"retrieveAndRankFieldsMappings": [
-	{"from":"field_in_doc","to":"field_in_SOLR"}
-]
-```
-
-#### `retrieveAndRankFieldsInclude` field example: 
-```json
-"retrieveAndRankFieldsInclude": ["field3_in_SOLR"]
-```
-
-#### `retrieveAndRankFieldsExclude` field example: 
-```json
-"retrieveAndRankFieldsExclude": ["field1_in_SOLR","field2_in_SOLR"]
-```
-
-## IBMWatsonDocumentConversion.indexMicrosoftWordDocument
-Prepares a `msword` document for the Retrieve and Rank service as part of an Enhanced Information Retrieval solution, then adds the content to your Solr index so you can search it.
-
-| Field                           | Type       | Description
-|---------------------------------|------------|----------
-| username                        | credentials| Username obtained from IBM Bluemix.
-| password                        | credentials| Password obtained from IBM Bluemix.
-| version                         | String     | The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.
-| file                            | File       | The `msword` file to convert. Maximum file size is 50 MB.
-| metadata                        | JSON       | A metadata part that describes the external metadata of the file. Required if the file is not included. You might call this method without a file part when there is no document content to index (for example, with a database connector). Maximum size of the part is 1 MB.
-| normalizedHtml                  | JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
-| retrieveAndRankDryRun           | Boolean    | The dryRun property defaults to false. Set it to true to test how your document is indexed. When set to true, service_instance_id, cluster_id, and search_collection are optional.
-| retrieveAndRankServiceInstanceId| String     | The identifier or your Retrieve and Rank service. Required if dry_run is not set to false. To find your service_instance_id, click the tile for your service in Bluemix, and then look at the URL in the browser for the serviceGuid= request parameter. The value for service_instance_id is the value for serviceGuid.
-| retrieveAndRankClusterId        | String     | Matches the value of solr_cluster_id in your Retrieve and Rank service. Required if dry_run is not set to false.
-| retrieveAndRankSearchCollection | String     | Matches the value of collection_name in your Retrieve and Rank service. Required if dry_run is not set to false.
-| retrieveAndRankFieldsMappings   | JSON       | An array of objects to specify how to connect metadata fields in the file to fields in SOLR. Use the syntax mappings"{"from":"field_in_doc","to":"field_in_SOLR"}].
-| retrieveAndRankFieldsInclude    | JSON       | An array of fields in the file to include from Retrieve and Rank. To specify the allowed fields, provide only the include object. When you provide an include object, fields that are not included are excluded. Use the syntax "include":["field3_in_SOLR"].
-| retrieveAndRankFieldsExclude    | JSON       | An array of fields to exclude from Retrieve and Rank. To exclude a few fields and allow all others, provide only the exclude object. Fields that are not excluded are allowed. Follows the syntax "exclude":["field1_in_SOLR","field2_in_SOLR"].
-
-#### `metadata` filed example
-```json
-"metadata": {
-	"custom_key": "customValue"
-}
-```
-
-#### `normalizedHtml` field example: 
-```json
-"normalizedHtml": {
-	"exclude_tags_completely":["script", "sup"],
-}
-```
-
-#### `retrieveAndRankFieldsMappings` field example: 
-```json
-"retrieveAndRankFieldsMappings": [
-	{"from":"field_in_doc","to":"field_in_SOLR"}
-]
-```
-
-#### `retrieveAndRankFieldsInclude` field example: 
-```json
-"retrieveAndRankFieldsInclude": ["field3_in_SOLR"]
-```
-
-#### `retrieveAndRankFieldsExclude` field example: 
-```json
-"retrieveAndRankFieldsExclude": ["field1_in_SOLR","field2_in_SOLR"]
-```
 
 ## IBMWatsonDocumentConversion.indexExternalMetadata
 Prepares a metadata object for the Retrieve and Rank service as part of an Enhanced Information Retrieval solution, then adds the content to your Solr index so you can search it.
