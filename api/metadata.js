@@ -681,15 +681,9 @@ module.exports.do = function(req, res){
                     required: false
                 },
                 {
-                    name: "file",
-                    type: "File",
-                    info: "The `msword` file to convert. Maximum file size is 50 MB.",
-                    required: false
-                },
-                {
                     name: "metadata",
-                    type: "JSON",
-                    info: "A metadata part that describes the external metadata of the file. Required if the file is not included. You might call this method without a file part when there is no document content to index (for example, with a database connector). Maximum size of the part is 1 MB.",
+                    type: "File",
+                    info: "File or JSON Object. A metadata part that describes the external metadata of the file. Required if the file is not included. You might call this method without a file part when there is no document content to index (for example, with a database connector). Maximum size of the part is 1 MB.",
                     required: true
                 },
                 {
