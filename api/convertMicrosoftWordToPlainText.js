@@ -55,7 +55,7 @@ module.exports = (req, res) => {
         if(!response.success)
             throw new RapidError('FILE_UPLOAD');
 
-        var attachFile = fs.createReadStream(fn);
+        var attachFile = fs.readFileSync(fn);
     } else {
         throw new RapidError('INTERNAL_PACKAGE_ERROR');
     }
