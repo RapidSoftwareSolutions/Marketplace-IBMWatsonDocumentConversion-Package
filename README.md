@@ -44,7 +44,6 @@ Converts a `html` document to JSON answer units.
 |---------------|------------|----------
 | username      | credentials| Username obtained from IBM Bluemix.
 | password      | credentials| Password obtained from IBM Bluemix.
-| version       | String     | The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.
 | file          | File       | The `html` file to convert. Maximum file size is 50 MB.
 | selectorTags  | JSON       | JSON Array. Defines the heading level that splits into answer units. Valid values are h1, h2, h3, h4, h5, h6, or an array of these values. By default, h1 and h2 headings with their content are split into answer units.
 | normalizedHtml| JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
@@ -73,7 +72,6 @@ Converts a `html` document to plain text.
 |---------------|------------|----------
 | username      | credentials| Username obtained from IBM Bluemix.
 | password      | credentials| Password obtained from IBM Bluemix.
-| version       | String     | The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.
 | file          | File       | The `html` file to convert. Maximum file size is 50 MB.
 | normalizedHtml| JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
 
@@ -95,7 +93,6 @@ Converts a `html` document to normalized HTML.
 |---------------|------------|----------
 | username      | credentials| Username obtained from IBM Bluemix.
 | password      | credentials| Password obtained from IBM Bluemix.
-| version       | String     | The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.
 | file          | File       | The `html` file to convert. Maximum file size is 50 MB.
 | normalizedHtml| JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
 
@@ -117,7 +114,6 @@ Converts a `pdf` document to json answer units.
 |---------------|------------|----------
 | username      | credentials| Username obtained from IBM Bluemix.
 | password      | credentials| Password obtained from IBM Bluemix.
-| version       | String     | The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.
 | file          | File       | The `pdf` file to convert. Maximum file size is 50 MB.
 | selectorTags  | JSON       | JSON Array. Defines the heading level that splits into answer units. Valid values are h1, h2, h3, h4, h5, h6, or an array of these values. By default, h1 and h2 headings with their content are split into answer units.
 | normalizedHtml| JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
@@ -146,7 +142,6 @@ Converts a `pdf` document to plain text.
 |---------------|------------|----------
 | username      | credentials| Username obtained from IBM Bluemix.
 | password      | credentials| Password obtained from IBM Bluemix.
-| version       | String     | The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.
 | file          | File       | The `pdf` file to convert. Maximum file size is 50 MB.
 | normalizedHtml| JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
 | headingFonts  | JSON       | JSON Array. PDF heading font configurations. 
@@ -179,7 +174,6 @@ Converts a `pdf` document to normalized HTML.
 |---------------|------------|----------
 | username      | credentials| Username obtained from IBM Bluemix.
 | password      | credentials| Password obtained from IBM Bluemix.
-| version       | String     | The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.
 | file          | File       | The `pdf` file to convert. Maximum file size is 50 MB.
 | normalizedHtml| JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
 | headingFonts  | JSON       | JSON Array. PDF heading font configurations. 
@@ -212,7 +206,6 @@ Converts a `Microsoft Word™` document to json answer units.
 |---------------|------------|----------
 | username      | credentials| Username obtained from IBM Bluemix.
 | password      | credentials| Password obtained from IBM Bluemix.
-| version       | String     | The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.
 | file          | File       | The `msword` file to convert. Maximum file size is 50 MB.
 | selectorTags  | JSON       | JSON Array. Defines the heading level that splits into answer units. Valid values are h1, h2, h3, h4, h5, h6, or an array of these values. By default, h1 and h2 headings with their content are split into answer units.
 | normalizedHtml| JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
@@ -255,7 +248,6 @@ Converts a `Microsoft Word™` document to plain text.
 |---------------|------------|----------
 | username      | credentials| Username obtained from IBM Bluemix.
 | password      | credentials| Password obtained from IBM Bluemix.
-| version       | String     | The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.
 | file          | File       | The `msword` file to convert. Maximum file size is 50 MB.
 | normalizedHtml| JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
 | headingFonts  | JSON       | JSON Array. Word heading font configurations. 
@@ -297,7 +289,6 @@ Converts a `Microsoft Word™` document to normalized HTML.
 |---------------|------------|----------
 | username      | credentials| Username obtained from IBM Bluemix.
 | password      | credentials| Password obtained from IBM Bluemix.
-| version       | String     | The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.
 | file          | File       | The `msword` file to convert. Maximum file size is 50 MB.
 | normalizedHtml| JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
 | headingFonts  | JSON       | JSON Array. Word heading font configurations. 
@@ -339,7 +330,6 @@ Prepares a document for the Retrieve and Rank service as part of an Enhanced Inf
 |---------------------------------|------------|----------
 | username                        | credentials| Username obtained from IBM Bluemix.
 | password                        | credentials| Password obtained from IBM Bluemix.
-| version                         | String     | The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.
 | file                            | File       | The file to index. Required if the metadata object is not included. Maximum file size is 50 MB. The API detects the MIME type, but you can specify it if incorrect. Acceptable MIME type values are text/html, text/xhtml+xml, application/pdf, application/msword, and application/vnd.openxmlformats-officedocument.wordprocessingml.document.
 | metadata                        | JSON       | A metadata part that describes the external metadata of the file. Required if the file is not included. You might call this method without a file part when there is no document content to index (for example, with a database connector). Maximum size of the part is 1 MB.
 | normalizedHtml                  | JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
@@ -358,7 +348,6 @@ Prepares a metadata object for the Retrieve and Rank service as part of an Enhan
 |---------------------------------|------------|----------
 | username                        | credentials| Username obtained from IBM Bluemix.
 | password                        | credentials| Password obtained from IBM Bluemix.
-| version                         | String     | The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.
 | file                            | File       | The `msword` file to convert. Maximum file size is 50 MB.
 | metadata                        | JSON       | A metadata part that describes the external metadata of the file. Required if the file is not included. You might call this method without a file part when there is no document content to index (for example, with a database connector). Maximum size of the part is 1 MB.
 | normalizedHtml                  | JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.

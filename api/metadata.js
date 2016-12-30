@@ -27,12 +27,6 @@ module.exports.do = function(req, res){
                     required: true
                 },
                 {
-                    name: "version",
-                    type: "String",
-                    info: "The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.",
-                    required: false
-                },
-                {
                     name: "file",
                     type: "File",
                     info: "The `html` file to convert. Maximum file size is 50 MB.",
@@ -69,12 +63,6 @@ module.exports.do = function(req, res){
                     required: true
                 },
                 {
-                    name: "version",
-                    type: "String",
-                    info: "The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.",
-                    required: false
-                },
-                {
                     name: "file",
                     type: "File",
                     info: "The `html` file to convert. Maximum file size is 50 MB.",
@@ -105,12 +93,6 @@ module.exports.do = function(req, res){
                     required: true
                 },
                 {
-                    name: "version",
-                    type: "String",
-                    info: "The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.",
-                    required: false
-                },
-                {
                     name: "file",
                     type: "File",
                     info: "The `html` file to convert. Maximum file size is 50 MB.",
@@ -139,12 +121,6 @@ module.exports.do = function(req, res){
                     type: "credentials",
                     info: "Password obtained from IBM Bluemix.",
                     required: true
-                },
-                {
-                    name: "version",
-                    type: "String",
-                    info: "The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.",
-                    required: false
                 },
                 {
                     name: "file",
@@ -189,12 +165,6 @@ module.exports.do = function(req, res){
                     required: true
                 },
                 {
-                    name: "version",
-                    type: "String",
-                    info: "The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.",
-                    required: false
-                },
-                {
                     name: "file",
                     type: "File",
                     info: "The `pdf` file to convert. Maximum file size is 50 MB.",
@@ -231,12 +201,6 @@ module.exports.do = function(req, res){
                     required: true
                 },
                 {
-                    name: "version",
-                    type: "String",
-                    info: "The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.",
-                    required: false
-                },
-                {
                     name: "file",
                     type: "File",
                     info: "The `pdf` file to convert. Maximum file size is 50 MB.",
@@ -271,12 +235,6 @@ module.exports.do = function(req, res){
                     type: "credentials",
                     info: "Password obtained from IBM Bluemix.",
                     required: true
-                },
-                {
-                    name: "version",
-                    type: "String",
-                    info: "The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.",
-                    required: false
                 },
                 {
                     name: "file",
@@ -327,12 +285,6 @@ module.exports.do = function(req, res){
                     required: true
                 },
                 {
-                    name: "version",
-                    type: "String",
-                    info: "The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.",
-                    required: false
-                },
-                {
                     name: "file",
                     type: "File",
                     info: "The `msword` file to convert. Maximum file size is 50 MB.",
@@ -373,12 +325,6 @@ module.exports.do = function(req, res){
                     type: "credentials",
                     info: "Password obtained from IBM Bluemix.",
                     required: true
-                },
-                {
-                    name: "version",
-                    type: "String",
-                    info: "The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.",
-                    required: false
                 },
                 {
                     name: "file",
@@ -505,12 +451,6 @@ module.exports.do = function(req, res){
                     type: "credentials",
                     info: "Password obtained from IBM Bluemix.",
                     required: true
-                },
-                {
-                    name: "version",
-                    type: "String",
-                    info: "The release date of the version of the API you want to use. Specify dates in YYYY-MM-DD format.",
-                    required: false
                 },
                 {
                     name: "metadata",
