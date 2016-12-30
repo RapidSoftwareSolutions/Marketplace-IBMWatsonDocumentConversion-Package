@@ -9,7 +9,11 @@ The IBM Watson™ Document conversion service converts a single HTML, PDF, or Mi
 2. Connect Natural Language Classifier to your application at the left side, choose pricing plan and click on 'Create' button at the bottom of the page.
 3. Click on 'Service Credentials' tab to see your username and password.
 
+# Configuration
+`normalizedHtml`, `headingFonts`, `headingStyles` fields format
+
 #### `normalizedHtml` format:
+
 
 | Field                      | Type       | Description
 |----------------------------|------------|----------
@@ -36,6 +40,8 @@ The IBM Watson™ Document conversion service converts a single HTML, PDF, or Mi
 |----------|--------------|----------
 | level    | Number       | **Required** when defining any other font value. Heading level to be generated. When specifying a list of 
 | names     | JSON Array   | A list of style names that should be considered a heading in the conversion. Valid values are an array of style names.
+
+---
 
 ## IBMWatsonDocumentConversion.convertHtmlToJsonUnits
 Converts a `html` document to JSON answer units.
