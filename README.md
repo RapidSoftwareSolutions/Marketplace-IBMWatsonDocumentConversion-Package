@@ -5,8 +5,8 @@ The IBM Watson™ Document conversion service converts a single HTML, PDF, or Mi
 
 ## How to get credentials: 
 0. Register to [IBM Bluemix Console](https://console.ng.bluemix.net/registration/) 
-1. After log in choose Natural Language Classifier from [services](https://console.ng.bluemix.net/catalog/?category=watson)
-2. Connect Natural Language Classifier to your application at the left side, choose pricing plan and click on 'Create' button at the bottom of the page.
+1. After log in choose Document Conversion from [services](https://console.ng.bluemix.net/catalog/?category=watson)
+2. Connect Document Conversion to your application at the left side, choose pricing plan and click on 'Create' button at the bottom of the page.
 3. Click on 'Service Credentials' tab to see your username and password.
 
 # Configuration
@@ -35,8 +35,8 @@ The IBM Watson™ Document conversion service converts a single HTML, PDF, or Mi
 #### `headingStyles` item format
 | Field    | Type         | Description
 |----------|--------------|----------
-| level    | Number       | **Required** when defining any other font value. Heading level to be generated. When specifying a list of 
-| names     | JSON Array   | A list of style names that should be considered a heading in the conversion. Valid values are an array of style names.
+| level    | Number       | **Required** when defining any other style value. Heading level to be generated. When specifying a list of heading values, the first configuration in each heading list that matches something from the input document is the configuration that is applied to the conversion to create that heading type Valid values are 1 (h1), 2 (h2), 3 (h3), 4 (h4), 5 (h5), and 6 (h6).
+| names    | JSON Array   | A list of style names that should be considered a heading in the conversion. Valid values are an array of style names.
 
 ---
 
