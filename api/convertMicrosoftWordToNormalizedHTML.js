@@ -75,7 +75,7 @@ module.exports = (req, res) => {
     .form();
     
     r.append('config', JSON.stringify(requestData.config));
-    r.append('file', attachFile);
+    r.append('file', attachFile, {contentType: 'application/msword'});
 
     return defered.promise;
 }

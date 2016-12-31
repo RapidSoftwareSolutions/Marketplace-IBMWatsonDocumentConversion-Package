@@ -55,7 +55,7 @@ module.exports = (req, res) => {
         if(!response.success)
             throw new RapidError('FILE_UPLOAD');
 
-        var attachFile = fs.readFileSync(fn);
+        var attachFile = fs.createReadStream(fn);
     } else {
         throw new RapidError('INTERNAL_PACKAGE_ERROR');
     }
@@ -75,7 +75,7 @@ module.exports = (req, res) => {
     .form();
     
     r.append('config', JSON.stringify(requestData.config));
-    r.append('file', attachFile);
+    r.append('file', attachFile, {contentType: 'application/msword'});
 
     return defered.promise;
 }
