@@ -80,7 +80,7 @@ module.exports = (req, res) => {
     .form();
     
     r.append('config', JSON.stringify(requestData.config));
-    r.append('file', attachFile, {contentType: 'application/msword'});
+    r.append('file', attachFile, {contentType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'});
 
     return defered.promise;
 }
