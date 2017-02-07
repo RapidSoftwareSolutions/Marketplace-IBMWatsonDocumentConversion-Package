@@ -1,3 +1,5 @@
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/IBMWatsonDocumentConversion/functions?utm_source=RapidAPIGitHub_IBMDocConverterFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
+
 # IBMWatsonDocumentConversion Package
 The IBM Watson™ Document conversion service converts a single HTML, PDF, or Microsoft Word™ document into a normalized HTML, plain text, or a set of JSON-formatted Answer units that can be used with other Watson services.
 * Domain: https://www.ibm.com/watson?ref=rapidapi
