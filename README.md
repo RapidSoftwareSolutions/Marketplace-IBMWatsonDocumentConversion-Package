@@ -5,8 +5,8 @@ The IBM Watson™ Document conversion service converts a single HTML, PDF, or Mi
 * Domain: https://www.ibm.com/watson?ref=rapidapi
 * Credentials: username, password
 
-## How to get credentials: 
-0. Register to [IBM Bluemix Console](https://console.ng.bluemix.net/registration/) 
+## How to get credentials:
+0. Register to [IBM Bluemix Console](https://console.ng.bluemix.net/registration/)
 1. After log in choose Document Conversion from [services](https://console.ng.bluemix.net/catalog/?category=watson)
 2. Connect Document Conversion to your application at the left side, choose pricing plan and click on 'Create' button at the bottom of the page.
 3. Click on 'Service Credentials' tab to see your username and password.
@@ -40,6 +40,17 @@ The IBM Watson™ Document conversion service converts a single HTML, PDF, or Mi
 | level    | Number       | **Required** when defining any other style value. Heading level to be generated. When specifying a list of heading values, the first configuration in each heading list that matches something from the input document is the configuration that is applied to the conversion to create that heading type Valid values are 1 (h1), 2 (h2), 3 (h3), 4 (h4), 5 (h5), and 6 (h6).
 | names    | JSON Array   | A list of style names that should be considered a heading in the conversion. Valid values are an array of style names.
 
+
+## Custom datatypes:
+ |Datatype|Description|Example
+ |--------|-----------|----------
+ |Datepicker|String which includes date and time|```2016-05-28 00:00:00```
+ |Map|String which includes latitude and longitude coma separated|```50.37, 26.56```
+ |List|Simple array|```["123", "sample"]```
+ |Select|String with predefined values|```sample```
+ |Array|Array of objects|```[{"Second name":"123","Age":"12","Photo":"sdf","Draft":"sdfsdf"},{"name":"adi","Second name":"bla","Age":"4","Photo":"asfserwe","Draft":"sdfsdf"}] ```
+
+
 ---
 
 ## IBMWatsonDocumentConversion.convertHtmlToJsonUnits
@@ -50,16 +61,16 @@ Converts a `html` document to JSON answer units.
 | username      | credentials| Username obtained from IBM Bluemix.
 | password      | credentials| Password obtained from IBM Bluemix.
 | file          | File       | The `html` file to convert. Maximum file size is 50 MB.
-| selectorTags  | JSON       | JSON Array. Defines the heading level that splits into answer units. Valid values are h1, h2, h3, h4, h5, h6, or an array of these values. By default, h1 and h2 headings with their content are split into answer units.
+| selectorTags  | List       | JSON Array. Defines the heading level that splits into answer units. Valid values are h1, h2, h3, h4, h5, h6, or an array of these values. By default, h1 and h2 headings with their content are split into answer units.
 | normalizedHtml| JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
 
 
-#### `selectorTags` field example: 
+#### `selectorTags` field example:
 ```json
 "selectorTags": ["h1","h2","h3","h4","h5","h6"]
 ```
 
-#### `normalizedHtml` field example: 
+#### `normalizedHtml` field example:
 ```json
 "normalizedHtml": {
 	"exclude_tags_completely":["script", "sup"],
@@ -80,7 +91,7 @@ Converts a `html` document to plain text.
 | file          | File       | The `html` file to convert. Maximum file size is 50 MB.
 | normalizedHtml| JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
 
-#### `normalizedHtml` field example: 
+#### `normalizedHtml` field example:
 ```json
 "normalizedHtml": {
 	"exclude_tags_completely":["script", "sup"],
@@ -101,7 +112,7 @@ Converts a `html` document to normalized HTML.
 | file          | File       | The `html` file to convert. Maximum file size is 50 MB.
 | normalizedHtml| JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
 
-#### `normalizedHtml` field example: 
+#### `normalizedHtml` field example:
 ```json
 "normalizedHtml": {
 	"exclude_tags_completely":["script", "sup"],
@@ -120,16 +131,16 @@ Converts a `pdf` document to json answer units.
 | username      | credentials| Username obtained from IBM Bluemix.
 | password      | credentials| Password obtained from IBM Bluemix.
 | file          | File       | The `pdf` file to convert. Maximum file size is 50 MB.
-| selectorTags  | JSON       | JSON Array. Defines the heading level that splits into answer units. Valid values are h1, h2, h3, h4, h5, h6, or an array of these values. By default, h1 and h2 headings with their content are split into answer units.
+| selectorTags  | List       | JSON Array. Defines the heading level that splits into answer units. Valid values are h1, h2, h3, h4, h5, h6, or an array of these values. By default, h1 and h2 headings with their content are split into answer units.
 | normalizedHtml| JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
-| headingFonts  | JSON       | JSON Array. PDF heading font configurations. 
+| headingFonts  | JSON       | JSON Array. PDF heading font configurations.
 
-#### `selectorTags` field example: 
+#### `selectorTags` field example:
 ```json
 "selectorTags": ["h1","h2","h3","h4","h5","h6"]
 ```
 
-#### `normalizedHtml` field example: 
+#### `normalizedHtml` field example:
 ```json
 "normalizedHtml": {
 	"exclude_tags_completely":["script", "sup"],
@@ -149,7 +160,7 @@ Converts a `pdf` document to plain text.
 | password      | credentials| Password obtained from IBM Bluemix.
 | file          | File       | The `pdf` file to convert. Maximum file size is 50 MB.
 | normalizedHtml| JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
-| headingFonts  | JSON       | JSON Array. PDF heading font configurations. 
+| headingFonts  | List       | JSON Array. PDF heading font configurations.
 
 #### `headingFonts` filed example
 ```json
@@ -161,7 +172,7 @@ Converts a `pdf` document to plain text.
 ]
 ```
 
-#### `normalizedHtml` field example: 
+#### `normalizedHtml` field example:
 ```json
 "normalizedHtml": {
 	"exclude_tags_completely":["script", "sup"],
@@ -181,7 +192,7 @@ Converts a `pdf` document to normalized HTML.
 | password      | credentials| Password obtained from IBM Bluemix.
 | file          | File       | The `pdf` file to convert. Maximum file size is 50 MB.
 | normalizedHtml| JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
-| headingFonts  | JSON       | JSON Array. PDF heading font configurations. 
+| headingFonts  | List       | JSON Array. PDF heading font configurations.
 
 #### `headingFonts` filed example
 ```json
@@ -193,7 +204,7 @@ Converts a `pdf` document to normalized HTML.
 ]
 ```
 
-#### `normalizedHtml` field example: 
+#### `normalizedHtml` field example:
 ```json
 "normalizedHtml": {
 	"exclude_tags_completely":["script", "sup"],
@@ -212,10 +223,10 @@ Converts a `Microsoft Word™` document to json answer units.
 | username      | credentials| Username obtained from IBM Bluemix.
 | password      | credentials| Password obtained from IBM Bluemix.
 | file          | File       | The `msword` file to convert. Maximum file size is 50 MB.
-| selectorTags  | JSON       | JSON Array. Defines the heading level that splits into answer units. Valid values are h1, h2, h3, h4, h5, h6, or an array of these values. By default, h1 and h2 headings with their content are split into answer units.
+| selectorTags  | List       | JSON Array. Defines the heading level that splits into answer units. Valid values are h1, h2, h3, h4, h5, h6, or an array of these values. By default, h1 and h2 headings with their content are split into answer units.
 | normalizedHtml| JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
-| headingFonts  | JSON       | JSON Array. Word heading font configurations. 
-| headingStyles | JSON       | JSON Array. Word heading styles configurations. 
+| headingFonts  | List       | JSON Array. Word heading font configurations.
+| headingStyles | List       | JSON Array. Word heading styles configurations.
 
 #### `headingFonts` filed example
 ```json
@@ -235,7 +246,7 @@ Converts a `Microsoft Word™` document to json answer units.
 ]
 ```
 
-#### `normalizedHtml` field example: 
+#### `normalizedHtml` field example:
 ```json
 "normalizedHtml": {
 	"exclude_tags_completely":["script", "sup"],
@@ -255,8 +266,8 @@ Converts a `Microsoft Word™` document to plain text.
 | password      | credentials| Password obtained from IBM Bluemix.
 | file          | File       | The `msword` file to convert. Maximum file size is 50 MB.
 | normalizedHtml| JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
-| headingFonts  | JSON       | JSON Array. Word heading font configurations. 
-| headingStyles | JSON       | JSON Array. Word heading styles configurations. 
+| headingFonts  | List       | JSON Array. Word heading font configurations.
+| headingStyles | List       | JSON Array. Word heading styles configurations.
 
 #### `headingFonts` filed example
 ```json
@@ -276,7 +287,7 @@ Converts a `Microsoft Word™` document to plain text.
 ]
 ```
 
-#### `normalizedHtml` field example: 
+#### `normalizedHtml` field example:
 ```json
 "normalizedHtml": {
 	"exclude_tags_completely":["script", "sup"],
@@ -296,8 +307,8 @@ Converts a `Microsoft Word™` document to normalized HTML.
 | password      | credentials| Password obtained from IBM Bluemix.
 | file          | File       | The `msword` file to convert. Maximum file size is 50 MB.
 | normalizedHtml| JSON       | An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations.
-| headingFonts  | JSON       | JSON Array. Word heading font configurations. 
-| headingStyles | JSON       | JSON Array. Word heading styles configurations.
+| headingFonts  | List       | JSON Array. Word heading font configurations.
+| headingStyles | List       | JSON Array. Word heading styles configurations.
 
 #### `headingFonts` filed example
 ```json
@@ -317,7 +328,7 @@ Converts a `Microsoft Word™` document to normalized HTML.
 ]
 ```
 
-#### `normalizedHtml` field example: 
+#### `normalizedHtml` field example:
 ```json
 "normalizedHtml": {
 	"exclude_tags_completely":["script", "sup"],
@@ -326,7 +337,7 @@ Converts a `Microsoft Word™` document to normalized HTML.
     "exclude_content":{"xpaths":["//*[@id='footer']","//*[@id='navigation']"]},
     "keep_tag_attributes":["*"]
 }
-``` 
+```
 
 ## IBMWatsonDocumentConversion.indexHtmlDocument
 Prepares a document for the Retrieve and Rank service as part of an Enhanced Information Retrieval solution, then adds the content to your Solr index so you can search it.
@@ -342,9 +353,9 @@ Prepares a document for the Retrieve and Rank service as part of an Enhanced Inf
 | retrieveAndRankServiceInstanceId| String     | The identifier or your Retrieve and Rank service. Required if dry_run is not set to false. To find your service_instance_id, click the tile for your service in Bluemix, and then look at the URL in the browser for the serviceGuid= request parameter. The value for service_instance_id is the value for serviceGuid.
 | retrieveAndRankClusterId        | String     | Matches the value of solr_cluster_id in your Retrieve and Rank service. Required if dry_run is not set to false.
 | retrieveAndRankSearchCollection | String     | Matches the value of collection_name in your Retrieve and Rank service. Required if dry_run is not set to false.
-| retrieveAndRankFieldsMappings   | JSON       | An array of objects to specify how to connect metadata fields in the file to fields in SOLR. Use the syntax "mappings"{"from":"field_in_doc","to":"field_in_SOLR"}].
-| retrieveAndRankFieldsInclude    | JSON       | An array of fields in the file to include from Retrieve and Rank. To specify the allowed fields, provide only the include object. When you provide an include object, fields that are not included are excluded. Use the syntax "include":["field3_in_SOLR"].
-| retrieveAndRankFieldsExclude    | JSON       | An array of fields to exclude from Retrieve and Rank. To exclude a few fields and allow all others, provide only the exclude object. Fields that are not excluded are allowed. Follows the syntax "exclude":["field1_in_SOLR","field2_in_SOLR"].
+| retrieveAndRankFieldsMappings   | List       | An array of objects to specify how to connect metadata fields in the file to fields in SOLR. Use the syntax "mappings"{"from":"field_in_doc","to":"field_in_SOLR"}].
+| retrieveAndRankFieldsInclude    | List       | An array of fields in the file to include from Retrieve and Rank. To specify the allowed fields, provide only the include object. When you provide an include object, fields that are not included are excluded. Use the syntax "include":["field3_in_SOLR"].
+| retrieveAndRankFieldsExclude    | List       | An array of fields to exclude from Retrieve and Rank. To exclude a few fields and allow all others, provide only the exclude object. Fields that are not excluded are allowed. Follows the syntax "exclude":["field1_in_SOLR","field2_in_SOLR"].
 
 ## IBMWatsonDocumentConversion.indexExternalMetadata
 Prepares a metadata object for the Retrieve and Rank service as part of an Enhanced Information Retrieval solution, then adds the content to your Solr index so you can search it.
@@ -360,9 +371,9 @@ Prepares a metadata object for the Retrieve and Rank service as part of an Enhan
 | retrieveAndRankServiceInstanceId| String     | The identifier or your Retrieve and Rank service. Required if dry_run is not set to false. To find your service_instance_id, click the tile for your service in Bluemix, and then look at the URL in the browser for the serviceGuid= request parameter. The value for service_instance_id is the value for serviceGuid.
 | retrieveAndRankClusterId        | String     | Matches the value of solr_cluster_id in your Retrieve and Rank service. Required if dry_run is not set to false.
 | retrieveAndRankSearchCollection | String     | Matches the value of collection_name in your Retrieve and Rank service. Required if dry_run is not set to false.
-| retrieveAndRankFieldsMappings   | JSON       | An array of objects to specify how to connect metadata fields in the file to fields in SOLR. Use the syntax mappings"{"from":"field_in_doc","to":"field_in_SOLR"}].
-| retrieveAndRankFieldsInclude    | JSON       | An array of fields in the file to include from Retrieve and Rank. To specify the allowed fields, provide only the include object. When you provide an include object, fields that are not included are excluded. Use the syntax "include":["field3_in_SOLR"].
-| retrieveAndRankFieldsExclude    | JSON       | An array of fields to exclude from Retrieve and Rank. To exclude a few fields and allow all others, provide only the exclude object. Fields that are not excluded are allowed. Follows the syntax "exclude":["field1_in_SOLR","field2_in_SOLR"].
+| retrieveAndRankFieldsMappings   | List       | An array of objects to specify how to connect metadata fields in the file to fields in SOLR. Use the syntax mappings"{"from":"field_in_doc","to":"field_in_SOLR"}].
+| retrieveAndRankFieldsInclude    | List       | An array of fields in the file to include from Retrieve and Rank. To specify the allowed fields, provide only the include object. When you provide an include object, fields that are not included are excluded. Use the syntax "include":["field3_in_SOLR"].
+| retrieveAndRankFieldsExclude    | List       | An array of fields to exclude from Retrieve and Rank. To exclude a few fields and allow all others, provide only the exclude object. Fields that are not excluded are allowed. Follows the syntax "exclude":["field1_in_SOLR","field2_in_SOLR"].
 
 #### `metadata` filed example
 ```json
@@ -371,27 +382,26 @@ Prepares a metadata object for the Retrieve and Rank service as part of an Enhan
 }
 ```
 
-#### `normalizedHtml` field example: 
+#### `normalizedHtml` field example:
 ```json
 "normalizedHtml": {
 	"exclude_tags_completely":["script", "sup"],
 }
 ```
 
-#### `retrieveAndRankFieldsMappings` field example: 
+#### `retrieveAndRankFieldsMappings` field example:
 ```json
 "retrieveAndRankFieldsMappings": [
 	{"from":"field_in_doc","to":"field_in_SOLR"}
 ]
 ```
 
-#### `retrieveAndRankFieldsInclude` field example: 
+#### `retrieveAndRankFieldsInclude` field example:
 ```json
 "retrieveAndRankFieldsInclude": ["field3_in_SOLR"]
 ```
 
-#### `retrieveAndRankFieldsExclude` field example: 
+#### `retrieveAndRankFieldsExclude` field example:
 ```json
 "retrieveAndRankFieldsExclude": ["field1_in_SOLR","field2_in_SOLR"]
 ```
-

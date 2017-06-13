@@ -34,7 +34,12 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "selectorTags",
-                    type: "JSON",
+                    type: "List",
+                    structure : {
+                      name: "selectorTag",
+                      type: "String",
+                      info: "Single selectorTag"
+                    },
                     info: "JSON Array. Defines the heading level that splits into answer units. Valid values are h1, h2, h3, h4, h5, h6, or an array of these values. By default, h1 and h2 headings with their content are split into answer units.",
                     required: false
                 },
@@ -44,7 +49,7 @@ module.exports.do = function(req, res){
                     info: "An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations, see README for more info.",
                     required: false
                 }
-            ], 
+            ],
             'callbacks':[{'name':'error','info':'Error'}, {'name':'success','info':'Success'}]
         }, {
             "name":"convertHtmlToPlainText",
@@ -74,7 +79,7 @@ module.exports.do = function(req, res){
                     info: "An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations, see README for more info.",
                     required: false
                 }
-            ], 
+            ],
             'callbacks':[{'name':'error','info':'Error'}, {'name':'success','info':'Success'}]
         }, {
             "name":"convertHtmlToNormalizedHTML",
@@ -104,7 +109,7 @@ module.exports.do = function(req, res){
                     info: "An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations, see README for more info.",
                     required: false
                 }
-            ], 
+            ],
             'callbacks':[{'name':'error','info':'Error'}, {'name':'success','info':'Success'}]
         }, {
             "name":"convertPDFToJsonUnits",
@@ -130,7 +135,12 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "selectorTags",
-                    type: "JSON",
+                    type: "List",
+                    structure : {
+                      name: "selectorTag",
+                      type: "String",
+                      info: "Single selectorTag"
+                    },
                     info: "JSON Array. Defines the heading level that splits into answer units. Valid values are h1, h2, h3, h4, h5, h6, or an array of these values. By default, h1 and h2 headings with their content are split into answer units.",
                     required: false
                 },
@@ -142,11 +152,16 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "headingFonts",
-                    type: "JSON",
+                    type: "List",
+                    structure : {
+                      name: "headingFont",
+                      type: "JSON",
+                      info: "Single headingFont"
+                    },
                     info: "JSON Array. PDF heading font configurations. See README for more info.",
                     required: false
                 }
-            ], 
+            ],
             'callbacks':[{'name':'error','info':'Error'}, {'name':'success','info':'Success'}]
         }, {
             "name":"convertPDFToPlainText",
@@ -178,11 +193,16 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "headingFonts",
-                    type: "JSON",
+                    type: "List",
+                    structure : {
+                      name: "headingFont",
+                      type: "JSON",
+                      info: "Single headingFont"
+                    },
                     info: "JSON Array. PDF heading font configurations. See README for more info.",
                     required: false
                 }
-            ], 
+            ],
             'callbacks':[{'name':'error','info':'Error'}, {'name':'success','info':'Success'}]
         }, {
             "name":"convertPDFToNormalizedHTML",
@@ -214,11 +234,16 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "headingFonts",
-                    type: "JSON",
+                    type: "List",
+                    structure : {
+                      name: "headingFont",
+                      type: "JSON",
+                      info: "Single headingFont"
+                    },
                     info: "JSON Array. PDF heading font configurations. See README for more info.",
                     required: false
                 }
-            ], 
+            ],
             'callbacks':[{'name':'error','info':'Error'}, {'name':'success','info':'Success'}]
         }, {
             "name":"convertMicrosoftWordToJsonUnits",
@@ -244,7 +269,12 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "selectorTags",
-                    type: "JSON",
+                    type: "List",
+                    structure : {
+                      name: "selectorTag",
+                      type: "String",
+                      info: "Single selectorTag"
+                    },
                     info: "JSON Array. Defines the heading level that splits into answer units. Valid values are h1, h2, h3, h4, h5, h6, or an array of these values. By default, h1 and h2 headings with their content are split into answer units.",
                     required: false
                 },
@@ -256,17 +286,27 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "headingFonts",
-                    type: "JSON",
+                    type: "List",
+                    structure : {
+                      name: "headingFont",
+                      type: "JSON",
+                      info: "Single headingFont"
+                    },
                     info: "JSON Array. Word heading font configurations. See README for more info.",
                     required: false
                 },
                 {
                     name: "headingStyles",
-                    type: "JSON",
+                    type: "List",
+                    structure : {
+                      name: "headingStyle",
+                      type: "JSON",
+                      info: "Single headingStyle"
+                    },
                     info: "JSON Array. Word heading styles configurations. See README for more info.",
                     required: false
                 }
-            ], 
+            ],
             'callbacks':[{'name':'error','info':'Error'}, {'name':'success','info':'Success'}]
         }, {
             "name":"convertMicrosoftWordToPlainText",
@@ -298,17 +338,27 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "headingFonts",
-                    type: "JSON",
+                    type: "List",
+                    structure : {
+                      name: "headingFont",
+                      type: "JSON",
+                      info: "Single headingFont"
+                    },
                     info: "JSON Array. Word heading font configurations. See README for more info.",
                     required: false
                 },
                 {
                     name: "headingStyles",
-                    type: "JSON",
+                    type: "List",
+                    structure : {
+                      name: "headingStyle",
+                      type: "JSON",
+                      info: "Single headingStyle"
+                    },
                     info: "JSON Array. Word heading styles configurations. See README for more info.",
                     required: false
                 }
-            ], 
+            ],
             'callbacks':[{'name':'error','info':'Error'}, {'name':'success','info':'Success'}]
         }, {
             "name":"convertMicrosoftWordToNormalizedHTML",
@@ -340,17 +390,27 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "headingFonts",
-                    type: "JSON",
+                    type: "List",
+                    structure : {
+                      name: "headingFont",
+                      type: "JSON",
+                      info: "Single headingFont"
+                    },
                     info: "JSON Array. Word heading font configurations. See README for more info.",
                     required: false
                 },
                 {
                     name: "headingStyles",
-                    type: "JSON",
+                    type: "List",
+                    structure : {
+                      name: "headingStyle",
+                      type: "JSON",
+                      info: "Single headingStyle"
+                    },
                     info: "JSON Array. Word heading styles configurations. See README for more info.",
                     required: false
                 }
-            ], 
+            ],
             'callbacks':[{'name':'error','info':'Error'}, {'name':'success','info':'Success'}]
         }, {
             "name":"indexDocument",
@@ -412,23 +472,38 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "retrieveAndRankFieldsMappings",
-                    type: "JSON",
+                    type: "List",
+                    structure : {
+                      name: "retrieveAndRankFieldMapping",
+                      type: "JSON",
+                      info: "Single retrieveAndRankFieldMapping"
+                    },
                     info: 'An array of objects to specify how to connect metadata fields in the file to fields in SOLR. Use the syntax mappings"{"from":"field_in_doc","to":"field_in_SOLR"}].',
                     required: false
                 },
                 {
                     name: "retrieveAndRankFieldsInclude",
-                    type: "JSON",
+                    type: "List",
+                    structure : {
+                      name: "retrieveAndRankFieldsInclude",
+                      type: "JSON",
+                      info: "Single retrieveAndRankFieldsInclude"
+                    },
                     info: 'An array of fields in the file to include from Retrieve and Rank. To specify the allowed fields, provide only the include object. When you provide an include object, fields that are not included are excluded. Use the syntax "include":["field3_in_SOLR"].',
                     required: false
                 },
                 {
                     name: "retrieveAndRankFieldsExclude",
-                    type: "JSON",
+                    type: "List",
+                    structure : {
+                      name: "retrieveAndRankFieldsExclude",
+                      type: "JSON",
+                      info: "Single retrieveAndRankFieldsExclude"
+                    },
                     info: 'An array of fields to exclude from Retrieve and Rank. To exclude a few fields and allow all others, provide only the exclude object. Fields that are not excluded are allowed. Follows the syntax "exclude":["field1_in_SOLR","field2_in_SOLR"].',
                     required: false
                 }
-            ], 
+            ],
             'callbacks':[{'name':'error','info':'Error'}, {'name':'success','info':'Success'}]
         }, {
             "name":"indexExternalMetadata",
@@ -478,23 +553,38 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "retrieveAndRankFieldsMappings",
-                    type: "JSON",
+                    type: "List",
+                    structure : {
+                      name: "retrieveAndRankFieldMapping",
+                      type: "JSON",
+                      info: "Single retrieveAndRankFieldMapping"
+                    },
                     info: 'An array of objects to specify how to connect metadata fields in the file to fields in SOLR. Use the syntax mappings"{"from":"field_in_doc","to":"field_in_SOLR"}].',
                     required: false
                 },
                 {
                     name: "retrieveAndRankFieldsInclude",
-                    type: "JSON",
+                    type: "List",
+                    structure : {
+                      name: "retrieveAndRankFieldsInclude",
+                      type: "JSON",
+                      info: "Single retrieveAndRankFieldsInclude"
+                    },
                     info: 'An array of fields in the file to include from Retrieve and Rank. To specify the allowed fields, provide only the include object. When you provide an include object, fields that are not included are excluded. Use the syntax "include":["field3_in_SOLR"].',
                     required: false
                 },
                 {
                     name: "retrieveAndRankFieldsExclude",
-                    type: "JSON",
+                    type: "List",
+                    structure : {
+                      name: "retrieveAndRankFieldsExclude",
+                      type: "JSON",
+                      info: "Single retrieveAndRankFieldsExclude"
+                    },
                     info: 'An array of fields to exclude from Retrieve and Rank. To exclude a few fields and allow all others, provide only the exclude object. Fields that are not excluded are allowed. Follows the syntax "exclude":["field1_in_SOLR","field2_in_SOLR"].',
                     required: false
                 }
-            ], 
+            ],
             'callbacks':[{'name':'error','info':'Error'}, {'name':'success','info':'Success'}]
         }]
     })
