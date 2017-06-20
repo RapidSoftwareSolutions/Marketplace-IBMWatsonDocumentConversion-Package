@@ -522,6 +522,13 @@ module.exports.do = function(req, res){
                     required: true
                 },
                 {
+                    name: "file",
+                    type: "File",
+
+                    info: 'A file to index',
+                    required: true
+                },
+                {
                     name: "metadata",
                     type: "List",
                     structure : {
