@@ -522,6 +522,18 @@ module.exports.do = function(req, res){
                     required: true
                 },
                 {
+                    name: "metadata",
+                    type: "List",
+                    structure : {
+                      name: "metadata",
+                      type: "JSON",
+                      info: "Single metadata"
+                    },
+                    info: 'An array of metadata JSON objects',
+                    required: true
+                },
+
+                {
                     name: "normalizedHtml",
                     type: "JSON",
                     info: "An object that defines the content that is included and excluded during the HTML normalization phase. All documents go through this phase. For more information about the normalized_html configurations, see README for more info.",
