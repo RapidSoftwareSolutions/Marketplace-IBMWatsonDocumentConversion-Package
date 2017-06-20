@@ -524,8 +524,7 @@ module.exports.do = function(req, res){
                 {
                     name: "file",
                     type: "File",
-
-                    info: 'A file to index',
+                    info: "A file to index",
                     required: true
                 },
                 {
