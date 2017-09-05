@@ -188,13 +188,8 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "headingFonts",
-                    type: "List",
-                    structure : {
-                      name: "headingFont",
-                      type: "JSON",
-                      info: "Single headingFont"
-                    },
-                    info: "JSON Array. PDF heading font configurations. See README for more info.",
+                    type: "String",
+                    info: "PDF heading font configurations. See README for more info.",
                     required: false
                 }
             ],
@@ -229,13 +224,8 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "headingFonts",
-                    type: "List",
-                    structure : {
-                      name: "headingFont",
-                      type: "JSON",
-                      info: "Single headingFont"
-                    },
-                    info: "JSON Array. PDF heading font configurations. See README for more info.",
+                    type: "String",
+                    info: "PDF heading font configurations. See README for more info.",
                     required: false
                 }
             ],
@@ -281,24 +271,14 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "headingFonts",
-                    type: "List",
-                    structure : {
-                      name: "headingFont",
-                      type: "JSON",
-                      info: "Single headingFont"
-                    },
-                    info: "JSON Array. Word heading font configurations. See README for more info.",
+                    type: "String",
+                    info: "PDF heading font configurations. See README for more info.",
                     required: false
                 },
                 {
                     name: "headingStyles",
-                    type: "List",
-                    structure : {
-                      name: "headingStyle",
-                      type: "JSON",
-                      info: "Single headingStyle"
-                    },
-                    info: "JSON Array. Word heading styles configurations. See README for more info.",
+                    type: "String",
+                    info: "Word heading styles configurations. See README for more info.",
                     required: false
                 }
             ],
@@ -333,24 +313,14 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "headingFonts",
-                    type: "List",
-                    structure : {
-                      name: "headingFont",
-                      type: "JSON",
-                      info: "Single headingFont"
-                    },
-                    info: "JSON Array. Word heading font configurations. See README for more info.",
+                    type: "String",
+                    info: "PDF heading font configurations. See README for more info.",
                     required: false
                 },
                 {
                     name: "headingStyles",
-                    type: "List",
-                    structure : {
-                      name: "headingStyle",
-                      type: "JSON",
-                      info: "Single headingStyle"
-                    },
-                    info: "JSON Array. Word heading styles configurations. See README for more info.",
+                    type: "String",
+                    info: "Word heading styles configurations. See README for more info.",
                     required: false
                 }
             ],
@@ -385,24 +355,14 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "headingFonts",
-                    type: "List",
-                    structure : {
-                      name: "headingFont",
-                      type: "JSON",
-                      info: "Single headingFont"
-                    },
-                    info: "JSON Array. Word heading font configurations. See README for more info.",
+                    type: "String",
+                    info: "PDF heading font configurations. See README for more info.",
                     required: false
                 },
                 {
                     name: "headingStyles",
-                    type: "List",
-                    structure : {
-                      name: "headingStyle",
-                      type: "JSON",
-                      info: "Single headingStyle"
-                    },
-                    info: "JSON Array. Word heading styles configurations. See README for more info.",
+                    type: "String",
+                    info: "Word heading styles configurations. See README for more info.",
                     required: false
                 }
             ],
