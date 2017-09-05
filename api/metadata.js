@@ -152,13 +152,8 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "headingFonts",
-                    type: "List",
-                    structure : {
-                      name: "headingFont",
-                      type: "JSON",
-                      info: "Single headingFont"
-                    },
-                    info: "JSON Array. PDF heading font configurations. See README for more info.",
+                    type: "String",
+                    info: "PDF heading font configurations. See README for more info.",
                     required: false
                 }
             ],
