@@ -592,13 +592,22 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "retrieveAndRankFieldsMappings",
-                    type: "List",
-                    structure : {
-                      name: "retrieveAndRankFieldMapping",
-                      type: "JSON",
-                      info: "Single retrieveAndRankFieldMapping"
-                    },
-                    info: 'An array of objects to specify how to connect metadata fields in the file to fields in SOLR. Use the syntax mappings"{"from":"field_in_doc","to":"field_in_SOLR"}].',
+                    type: "Array",
+                    structure : [
+                        {
+                            name: "from",
+                            type: "String",
+                            info: "From value",
+                            required: true
+                        },
+                        {
+                            name: "to",
+                            type: "String",
+                            info: "To value",
+                            required: false
+                        }
+                    ],
+                    info: 'An array of objects to specify how to connect metadata fields in the file to fields in SOLR. Use the syntax mappings [{"from":"field_in_doc", "to":"field_in_SOLR"}].',
                     required: false
                 },
                 {
