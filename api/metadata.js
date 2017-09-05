@@ -540,13 +540,15 @@ module.exports.do = function(req, res){
                 {
                     name: "metadata",
                     type: "List",
+                    info: 'An array of metadata JSON objects',
+                    required: true,
                     structure : {
                       name: "metadataItem",
                       type: "JSON",
-                      info: "Single metadata item"
-                    },
-                    info: 'An array of metadata JSON objects',
-                    required: true
+                      info: "Single metadata item",
+                      required: true
+                    }
+
                 },
 
                 {
