@@ -73,7 +73,7 @@ module.exports = (req, res) => {
             throw new RapidError('INTERNAL_PACKAGE_ERROR');
         }
     }
-
+    metadata = metadata.trim();
     try {
         attachFile = (typeof metadata == 'string') ? JSON.parse(metadata) : metadata;
     } catch(e) {
