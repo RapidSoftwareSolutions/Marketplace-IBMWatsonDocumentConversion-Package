@@ -567,7 +567,8 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "retrieveAndRankDryRun",
-                    type: "Boolean",
+                    type: "Select",
+                    options: ["true","false"],
                     info: "The dryRun property defaults to false. Set it to true to test how your document is indexed. When set to true, service_instance_id, cluster_id, and search_collection are optional.",
                     required: false
                 },
