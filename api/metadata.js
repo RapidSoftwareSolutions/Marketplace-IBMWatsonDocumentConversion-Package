@@ -448,7 +448,8 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "retrieveAndRankDryRun",
-                    type: "Boolean",
+                    type: "Select",
+                    options: ["true","false"],
                     info: "The dryRun property defaults to false. Set it to true to test how your document is indexed. When set to true, service_instance_id, cluster_id, and search_collection are optional.",
                     required: false
                 },
@@ -472,13 +473,22 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "retrieveAndRankFieldsMappings",
-                    type: "List",
-                    structure : {
-                      name: "retrieveAndRankFieldMapping",
-                      type: "JSON",
-                      info: "Single retrieveAndRankFieldMapping"
-                    },
-                    info: 'An array of objects to specify how to connect metadata fields in the file to fields in SOLR. Use the syntax mappings"{"from":"field_in_doc","to":"field_in_SOLR"}].',
+                    type: "Array",
+                    structure : [
+                        {
+                            name: "from",
+                            type: "String",
+                            info: "From value",
+                            required: true
+                        },
+                        {
+                            name: "to",
+                            type: "String",
+                            info: "To value",
+                            required: false
+                        }
+                    ],
+                    info: 'An array of objects to specify how to connect metadata fields in the file to fields in SOLR. Use the syntax mappings [{"from":"field_in_doc", "to":"field_in_SOLR"}].',
                     required: false
                 },
                 {
@@ -531,9 +541,9 @@ module.exports.do = function(req, res){
                     name: "metadata",
                     type: "List",
                     structure : {
-                      name: "metadata",
+                      name: "metadataItem",
                       type: "JSON",
-                      info: "Single metadata"
+                      info: "Single metadata item"
                     },
                     info: 'An array of metadata JSON objects',
                     required: true

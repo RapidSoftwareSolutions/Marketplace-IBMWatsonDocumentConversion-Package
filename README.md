@@ -2,7 +2,7 @@
 
 # IBMWatsonDocumentConversion Package
 The IBM Watson™ Document conversion service converts a single HTML, PDF, or Microsoft Word™ document into a normalized HTML, plain text, or a set of JSON-formatted Answer units that can be used with other Watson services.
-* Domain: https://www.ibm.com/watson?ref=rapidapi
+* Domain: [ibm.com](https://www.ibm.com/watson)
 * Credentials: username, password
 
 ## How to get credentials:
@@ -149,6 +149,16 @@ Converts a `pdf` document to json answer units.
     "exclude_content":{"xpaths":["//*[@id='footer']","//*[@id='navigation']"]},
     "keep_tag_attributes":["*"]
 }
+```
+
+#### `headingFonts` filed example
+```json
+"headingFonts": [
+    {"level": 1, "min_size": 24},
+    {"level": 2, "min_size": 18, "max_size": 23, "bold": true},
+    {"level": 3, "min_size": 14, "max_size": 17, "italic": false},
+    {"level": 4, "min_size": 12, "max_size": 13, "name": "Times New Roman"}
+]
 ```
 
 ## IBMWatsonDocumentConversion.convertPDFToPlainText
